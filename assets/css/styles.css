@@ -9,6 +9,7 @@ body {
   grid-template-columns: 250px 1fr;
   grid-template-rows: 1fr auto;
   height: 100vh;
+  overflow-x: hidden; /* Evitar scroll horizontal */
 }
 
 /* Aside */
@@ -200,23 +201,26 @@ footer ul li a:hover {
 
   /* Modificaciones para contenido-principal */
   .contenido-principal {
-    flex-direction: column; /* Cambiar a columna */
-    align-items: center; /* Centrar elementos */
+    flex-direction: column;
+    align-items: center;
     padding: 20px;
+    width: 100%; 
+    box-sizing: border-box;
   }
 
   .texto-principal {
-    max-width: 100%; /* Ajustar el ancho al 100% */
-    text-align: left; /* Centrar el texto */
+    max-width: 100%;
+    text-align: left;
   }
 
   .imagen-principal {
-    max-width: 100%; /* Ajustar el ancho al 100% */
-    margin-bottom: 20px; /* Espacio entre la imagen y el texto */
+    max-width: 100%;
+    margin-bottom: 20px;
   }
 
   .imagen-principal img {
     max-width: 100%;
+    height: auto;
     border-radius: 10px;
   }
 }
