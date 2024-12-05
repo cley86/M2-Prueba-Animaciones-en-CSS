@@ -106,6 +106,31 @@ main {
   font-size: 14px;
 }
 
+.contenido-principal {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.texto-principal {
+  max-width: 60%;
+}
+
+.texto-principal h1 {
+  text-align: left;
+  color: #d42a88;
+}
+
+.imagen-principal {
+  max-width: 35%;
+}
+
+.imagen-principal img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
 /* Footer */
 footer {
   grid-area: footer;
@@ -144,32 +169,54 @@ footer ul li a:hover {
   }
 
   aside {
-    flex-direction: column; /* Cambia a columna para alinear verticalmente */
-    align-items: center; /* Centra horizontalmente los elementos */
-    justify-content: center; /* Centra verticalmente los elementos */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
   aside .logo {
-    margin-bottom: 10px; /* Espacio entre el logo y el menú */
+    margin-bottom: 10px;
   }
 
   aside h2 {
-    display: none; /* Oculta el título en dispositivos pequeños */
+    display: none;
   }
 
   aside ul {
-    display: flex; /* Alinea los elementos de la lista en fila */
-    padding: 0; /* Elimina el padding por defecto */
-    margin: 0; /* Elimina el margin por defecto */
-    list-style: none; /* Elimina los puntos de la lista */
-    justify-content: center; /* Centra los elementos del menú */
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    justify-content: center;
   }
 
   aside ul li {
-    margin-left: 20px; /* Espacio entre los elementos del menú */
+    margin-left: 20px;
   }
 
   aside ul li a {
-    color: white; /* Asegúrate de que el color del texto sea visible */
+    color: white;
+  }
+
+  /* Modificaciones para contenido-principal */
+  .contenido-principal {
+    flex-direction: column; /* Cambiar a columna */
+    align-items: center; /* Centrar elementos */
+    padding: 20px;
+  }
+
+  .texto-principal {
+    max-width: 100%; /* Ajustar el ancho al 100% */
+    text-align: left; /* Centrar el texto */
+  }
+
+  .imagen-principal {
+    max-width: 100%; /* Ajustar el ancho al 100% */
+    margin-bottom: 20px; /* Espacio entre la imagen y el texto */
+  }
+
+  .imagen-principal img {
+    max-width: 100%;
+    border-radius: 10px;
   }
 }
