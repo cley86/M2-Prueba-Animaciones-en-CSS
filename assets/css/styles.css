@@ -1,0 +1,175 @@
+/* Estructura del Layout */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: grid;
+  grid-template-areas:
+    "aside main"
+    "footer footer";
+  grid-template-columns: 250px 1fr;
+  grid-template-rows: 1fr auto;
+  height: 100vh;
+}
+
+/* Aside */
+aside {
+  grid-area: aside;
+  background-color: #6db33f;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+aside .logo {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+aside .logo img {
+  max-width: 100px;
+  padding-bottom: 20px;
+}
+
+aside h2 {
+  font-size: 24px;
+  text-align: center;
+}
+
+aside ul {
+  list-style: none;
+  padding: 0;
+}
+
+aside ul li {
+  margin: 10px 0;
+}
+
+aside ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+}
+
+aside ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Main */
+main {
+  grid-area: main;
+  padding: 20px;
+  background-color: #f8f8f8;
+}
+
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.card img:hover {
+  filter: grayscale(0%);
+}
+
+.card h3 {
+  color: #d42a88;
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.card p {
+  color: #555;
+  font-size: 14px;
+}
+
+/* Footer */
+footer {
+  grid-area: footer;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+footer ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 0;
+}
+
+footer ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+footer ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  body {
+    grid-template-areas:
+      "aside"
+      "main"
+      "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+  }
+
+  aside {
+    flex-direction: column; /* Cambia a columna para alinear verticalmente */
+    align-items: center; /* Centra horizontalmente los elementos */
+    justify-content: center; /* Centra verticalmente los elementos */
+  }
+
+  aside .logo {
+    margin-bottom: 10px; /* Espacio entre el logo y el menú */
+  }
+
+  aside h2 {
+    display: none; /* Oculta el título en dispositivos pequeños */
+  }
+
+  aside ul {
+    display: flex; /* Alinea los elementos de la lista en fila */
+    padding: 0; /* Elimina el padding por defecto */
+    margin: 0; /* Elimina el margin por defecto */
+    list-style: none; /* Elimina los puntos de la lista */
+    justify-content: center; /* Centra los elementos del menú */
+  }
+
+  aside ul li {
+    margin-left: 20px; /* Espacio entre los elementos del menú */
+  }
+
+  aside ul li a {
+    color: white; /* Asegúrate de que el color del texto sea visible */
+  }
+}
